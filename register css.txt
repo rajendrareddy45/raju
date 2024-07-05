@@ -1,0 +1,20 @@
+body {
+  
+  background-image: url("pic.jpg");
+  background-size:contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.form-container {
+  background-color: #120000;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  width: 400px;
+}
+.form-group{
+    text-align-last: left ;
+  }
