@@ -1,0 +1,20 @@
+const express = require('express');
+const QRCode = require('qrcode');
+const app = express();
+const port = 3000;
+
+app.get('/generate', (req, res) => {
+    const qrText = req.query.text || 'https://example.com';
+    QRCode.toDataURL(qrText, (err, url) => {
+        if (err){
+            console.error(err);
+            res.status(500).send('Error generating QR code');
+        } else {
+            res.send(`<img src="${url}">`);
+        }
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+});
